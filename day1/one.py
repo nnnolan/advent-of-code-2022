@@ -6,12 +6,14 @@ largest = 0
 largest2 = 0
 largest3 = 0
 current_checking = 0
+stuff = []
 for i in lines:
     try:
         current_checking += int(i)
     
     except ValueError:
-        print("ValueError")
+        stuff.append(current_checking)
+        print(f"ValueError, the current largest is {largest}, {largest2}, {largest3}")
         if current_checking > largest:
             largest = current_checking
         elif current_checking > largest2:
@@ -21,8 +23,11 @@ for i in lines:
         
         current_checking = 0
         
+list.sort(stuff)
+print(stuff)
 print(largest)
-
+print(largest2)
+print(largest3)
 print(largest + largest2 + largest3)
         
     
