@@ -10,38 +10,41 @@ total = 0
 
 for i in lines:
 
-    if i[0] == "A": # OPPONET GIVES ROCK
+    if i[2] == "X": # lose case    
         
-        if i[2] == "X":#ROCK V ROCK
-            total += 4
+        if i[0] == "A": #lose, opponent gives rock, i   respond scissors
+            total += 3
+        
+        elif i[0] == "B": #lose, opponent gives paper, i respond rock
+            total +=1 
+        
+        elif i[0] == "C": #lose, opponent gives scissors, i respond paper
+            total += 2
             
-        elif i[2] == "Y":#ROCK V PAPER
+           
+    
+    elif i[2] == "Y": # DRAWS
+        
+        if i[0] == "A": #draw, opponent gives rock, i respond rock
+            total +=4
+        
+        elif i[0] == "B": #draw, opponent gives paper, i respond paper
+            total += 5
+        
+        elif i[0] == "C": #draw, opponent gives scissors, i respond scissors
+            total += 6
+
+    
+    elif i[2] == "Z": # need to win
+
+        if i[0] == "A": #win, opponent gives rock, i respond paper
             total += 8
         
-        elif i[2] == "Z": # ROCK V SCISSORS
-            total += 3
-    
-    elif i[0] == "B": # OPPONET GIVES PAPER
-        
-        if i[2] == "X": #PAPER V ROCK
-            total += 1 
-            
-        elif i[2] == "Y": #PAPER V PAPER
-            total += 5
-            
-        elif i[2] == "Z": #PAPER V SCISSORS
+        if i[0] == "B": #win, opponent gives paper, i respond scissors
             total += 9
-    
-    elif i[0] == "C": # OPPONET GIVES SCISSORS
         
-        if i[2] == "X": #SCISSORS V ROCK
+        if i[0] == "C": #win, opponent gives scissors, i respond rock
             total += 7
-        
-        elif i[2] == "Y": #SCISSORS V PAPER
-            total += 2
-        
-        elif i[2] == "Z":  #SCISSORS V SCISSORS
-            total += 6
             
 print(total)        
 
