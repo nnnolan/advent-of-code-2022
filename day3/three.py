@@ -12,11 +12,9 @@ for i in lines:
         print("something went wrong you idiot")
         break
     for j in firstpart:
-        print(firstpart, secondpart)
         if j in secondpart and j not in currently_checking:
             print(f"found a match: {j}, {secondpart}")
             currently_checking.append(j)
-            print(currently_checking)
             systems.append(j)
 
 
@@ -37,4 +35,24 @@ for i in systems:
     total += alphabetvalues[i]
 
 print(total)
-    
+
+#part two , part one is beyond repair
+#this won't be pretty
+test = 0
+splits = [lines[i:i+3] for i in range(0,len(lines),3)]
+
+currently_checking = []
+total = 0
+alphabets=list(string.ascii_letters)
+
+for i in splits:
+    print(i)
+    currently_checking = []
+    for j in alphabets:
+        if j in i[0] and j in i[1] and j in i[2] and j not in currently_checking:
+            currently_checking.append(j)
+            total += alphabetvalues[j]
+            print(f"found a match: {j}, {i}")
+            print(currently_checking)
+print(total)
+
