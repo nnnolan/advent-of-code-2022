@@ -19,3 +19,12 @@ for i in lines:
     ):
         count += 1
         
+    
+    if a2 >= b1 and a1 <= b2 or (
+        b2 >= a1 and b1 <= a2
+    ):
+        parttwo += 1
+        
+    
+print(count)
+print(parttwo) 
