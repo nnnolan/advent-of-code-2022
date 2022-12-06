@@ -1,5 +1,4 @@
-
-with open(r'c:\Users\npestano\Documents\GitHub\advent-of-code-2022\advent-of-code-2022\day5\five.txt') as x:
+with open('five.txt') as x:
     x = x.readlines()
     lines = [item.strip() for item in x]
 split_lines = []
@@ -26,6 +25,7 @@ seven = seven.reverse()
 eight = eight.reverse()
 nine = nine.reverse()
 
+
 for i in split_lines:
     if '[' in i[0] or i[0] == '1':
         print(i)
@@ -33,11 +33,15 @@ for i in split_lines:
     elif i[0] == 'move':
         print(i)
         print('not a pass')
-        
-        int(i)
-        
-    else:
-        print('wtf')
+
+        move_count = i[1]
+        destination = i[5]
+        origin =  i[3]
+        print(move_count, destination, origin)
+
+        print(range())
+
+    
 # for i in split_lipes:
 #     print(i)
 #     if i[0] != "move" and i[0] != "1": # setup
