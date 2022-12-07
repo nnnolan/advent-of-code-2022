@@ -26,7 +26,21 @@ seven = seven.reverse()
 eight = eight.reverse()
 nine = nine.reverse()
 
+my_dict = {
+    1: one,
+    2: two,
+    3: three,
+    4: four,
+    5: five,
+    6: six,
+    7: seven,
+    8: eight
+}
+
+print(my_dict[1])
+
 for i in split_lines:
+    temp = []
     if '[' in i[0] or i[0] == '1':
         print(i)
         print('pass')
@@ -34,10 +48,21 @@ for i in split_lines:
         print(i)
         print('not a pass')
         
-        int(i)
+        amount = int(i[1])
+        where_to = int(i[5])
+        from_where = int(i[3])
+        
+        for i in range((amount)): #makes sure to get last item
+            temp.append(i)
+        print(temp)
+        
+        while len(temp) != 0:
+            my_dict[where_to].append(my_dict[from_where].pop())
+            temp.pop()
         
     else:
-        print('wtf')
+        print(i)
+        print('youre better than this')
 # for i in split_lipes:
 #     print(i)
 #     if i[0] != "move" and i[0] != "1": # setup
