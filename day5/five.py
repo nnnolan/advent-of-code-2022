@@ -1,5 +1,4 @@
-
-with open(r'c:\Users\npestano\Documents\GitHub\advent-of-code-2022\advent-of-code-2022\day5\five.txt') as x:
+with open('five.txt') as x:
     x = x.readlines()
     lines = [item.strip() for item in x]
 split_lines = []
