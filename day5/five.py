@@ -15,53 +15,56 @@ seven = ['G', 'T', 'S', 'C', 'L', 'F', 'P']
 eight = ['Z', 'D', 'B']
 nine = ['W', 'Z', 'N', 'M']
 
-one = one.reverse()
-two = two.reverse()
-three = three.reverse()
-four = four.reverse()
-five = five.reverse()
-six = six.reverse()
-seven = seven.reverse()
-eight = eight.reverse()
-nine = nine.reverse()
+one.reverse()
+two.reverse()
+three.reverse()
+four.reverse()
+five.reverse()
+six.reverse()
+seven.reverse()
+eight.reverse()
+nine.reverse()
 
-my_dict = {
-    1: one,
-    2: two,
-    3: three,
-    4: four,
-    5: five,
-    6: six,
-    7: seven,
-    8: eight
-}
+def where_to(where_to_move):
+    if where_to_move == 1:
+        return one
+    if where_to_move == 2:
+        return two
+    if where_to_move == 3:
+        return three
+    if where_to_move == 4:
+        return four
+    if where_to_move == 5:
+        return five
+    if where_to_move == 6:
+        return six
+    if where_to_move == 7:
+        return seven
+    if where_to_move == 8:
+        return eight
+    if where_to_move == 9:
+        return nine
 
-print(my_dict[1])
 
 for i in split_lines:
+    
     temp = []
-    if '[' in i[0] or i[0] == '1':
+    
+    if 'move' in i:
         print(i)
-        print('pass')
-    elif i[0] == 'move':
-        print(i)
-        print('not a pass')
         
-        amount = int(i[1])
-        where_to = int(i[5])
-        from_where = int(i[3])
+        count_to_move = int(splitted[1])
+        where_to_move = int(splitted[5])
+        from_to_move = int(splitted[3])
         
-        for i in range((amount)): #makes sure to get last item
-            temp.append(i)
-        print(temp)
+        if from_to_move == 1:
+            for i in range(count_to_move):
+                temp.append(one.pop())
+                dest = where_to(where_to_move)
+                print(dest)
+             
+
         
-        while len(temp) != 0:
-            my_dict[where_to].append(my_dict[from_where].pop())
-            temp.pop()
-        
-    else:
-        print(i)
-        print('youre better than this')
 # for i in split_lipes:
 #     print(i)
 #     if i[0] != "move" and i[0] != "1": # setup
@@ -140,5 +143,5 @@ for i in split_lines:
 #         count = 1
 
 
-# print(one, two, three, four)
-# print(five, six, seven, eight, nine)
+print(one, two, three, four)
+print(five, six, seven, eight)
